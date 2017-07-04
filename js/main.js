@@ -31,13 +31,13 @@ function validateForm(){
 			}
 		})();
 		//Validate Password
-		(function contrasena(){
+		(function password(){
 			var password = $("#input-password").val();
 			if (password=="123456" || password=="098765" || password=="password" || !(/^(?=.*\d).{6,}$/).test(password)){
 				$(".form-group").first().append('<span>Contraseña inválida. Ingrese nuevamente.');
 			}
 		})();
-		//Validate Twitter
+		//Validate Twitter - no funciona 
 		(function twitterAccountExists($username){
 			var twitter = $("#input-social").val();
 	    $twitter = get_headers("https://twitter.com/".$username);
