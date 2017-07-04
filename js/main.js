@@ -30,4 +30,21 @@ function validateForm(){
 				$(".email-container").append('<span>Correo inválido. Ingrese nuevamente.');
 			}
 		})();
+		//Validate Password
+		(function contrasena(){
+			var password = $("#input-password").val();
+			if (password=="123456" || password=="098765" || password=="password" || !(/^(?=.*\d).{6,}$/).test(password)){
+				$(".form-group").first().append('<span>Contraseña inválida. Ingrese nuevamente.');
+			}
+		})();
+		//Validate Twitter
+		(function twitterAccountExists($username){
+			var twitter = $("#input-social").val();
+	    $twitter = get_headers("https://twitter.com/".$username);
+	    if(strpos($twitter[0], '404') !== false ) {
+	    $(".form-group").first().append('<span>Contraseña inválida. Ingrese nuevamente.');
+			}
+		})();	
+	});
+}	
 
